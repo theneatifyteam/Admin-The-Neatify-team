@@ -1,0 +1,479 @@
+/* =================================================
+   GLOBAL
+   ================================================= */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =================================================
+   AUTH / LOGIN
+   ================================================= */
+
+/* =================================================
+   LOGIN BACKGROUND (MOVED FROM JS TO CSS)
+   ================================================= */
+
+.auth-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./background-image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+.auth-card {
+  width: 320px;
+  background: #ffffff;
+  padding: 30px 25px 25px;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  margin-top: 40px; /* space for logo */
+}
+.auth-card-wrapper {
+  position: relative;
+  transform: translateY(-40px); /* moves card + logo upward */
+}
+
+.auth-logo {
+  position: absolute;
+  top: -70px;          /* OUTSIDE the card */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+
+.auth-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.auth-input {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 14px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.auth-button {
+  width: 100%;
+  height: 42px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #ffd700;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+ 
+
+}
+
+.auth-button:hover {
+  opacity: 0.9;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.auth-error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.auth-link {
+  margin-top: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.auth-link span {
+  font-weight: 700;
+}
+
+/* =================================================
+   DASHBOARD + HEADER
+   ================================================= */
+
+.dashboard {
+  padding: 10px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* HEADER CENTER FIX */
+.dashboard-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dashboard-title {
+  text-align: center;
+  line-height: 1.2;
+}
+/* Tighten Admin Dashboard text */
+.dashboard-title p,
+.dashboard-subtitle {
+  margin: 4px 0 !important;
+}
+
+.brand-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+  font-size: 2px; /* ❌ original (kept as-is) */
+  font-weight: 600;
+}
+
+.logout-btn {
+  position: absolute;
+  right: 0;
+}
+
+/* =================================================
+   DASHBOARD TABS
+   ================================================= */
+
+.dashboard-tabs {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.dashboard-tabs-centered {
+  justify-content: center;
+}
+
+.dashboard-tabs span,
+.dashboard-tabs button {
+  background: none;
+  border: none;
+  padding-bottom: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dashboard-tabs .active {
+  border-bottom: 3px solid #ffd700;
+  font-weight: 600;
+}
+
+/* =================================================
+   SERVICES PAGE
+   ================================================= */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+.service-card-actions {
+  margin-top: auto;              /* push buttons to bottom */
+  display: flex;
+  justify-content: flex-end;     /* move to right */
+  gap: 12px;                     /* space between buttons */
+}
+
+.service-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.service-card-content {
+  flex: 1;
+  margin-top: 10px;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.edit-btn {
+  align-self: flex-end;
+  margin-top: 12px;
+  background: #ffd700;
+  border: none;
+  padding: 9px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* =================================================
+   BOOKINGS PAGE
+   ================================================= */
+
+.booking-grid,
+.booking-card {
+  display: none !important;
+}
+
+.booking-table-wrapper {
+  margin-top: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.booking-table thead {
+  background: #f5f5f5;
+}
+
+.booking-table th {
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #e0e0e0;
+  white-space: nowrap;
+}
+
+.booking-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eaeaea;
+  vertical-align: middle;
+}
+
+.booking-table th:last-child,
+.booking-table td:last-child {
+  border-right: none;
+}
+
+.booking-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.booking-table td:last-child {
+  text-align: right;
+}
+
+/* =================================================
+   COMMON BUTTONS
+   ================================================= */
+
+.allot-btn {
+  padding: 8px 14px;
+  background: #ffd700;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-right: 20%;
+  
+}
+
+.allot-btn:hover {
+  opacity: 0.85;
+}
+
+/* =================================================
+   STAFF CARDS
+   ================================================= */
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.staff-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  width: 300px;
+}
+
+/* =================================================
+   CENTER BACK TO BOOKINGS BUTTON
+   ================================================= */
+
+.staff-back-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* =================================================
+   CLEAR FILTER BUTTON
+   ================================================= */
+
+.clear-filter-btn {
+  background: #ffd700 !important;
+  color: #000;
+  padding: 8px 18px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clear-filter-btn:hover {
+  opacity: 0.85;
+}
+
+/* =================================================
+   RESPONSIVE
+   ================================================= */
+
+@media (max-width: 900px) {
+  .services-grid,
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-table th,
+  .booking-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid,
+  .staff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-table {
+    font-size: 12px;
+  }
+}
+
+/* =================================================
+   ✅ ADDITIONS ONLY (SPACING FIX)
+   ================================================= */
+
+/* Reduce top whitespace */
+.dashboard {
+  padding-top: 15px;
+}
+
+/* Reduce space between Neatify Nation & Admin Dashboard */
+.brand-title {
+  margin-bottom: 4px;
+}
+
+/* Fix Admin Dashboard text size */
+.dashboard-subtitle {
+  font-size: 18px;
+  margin-top: 2px;
+}
+.service-filter {
+  margin-left: auto;        /* ✅ key line */
+}
+/* Gap between Services and Add Service tabs */
+.services-header-row > div {
+  display: flex;
+  gap: 40px;   /* adjust if needed: 30px / 40px / 50px */
+}
+/* =================================================
+   ACCOUNT DROPDOWN
+   ================================================= */
+
+.account-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 10%;
+  border-radius: 5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 100;
+  min-width: 120px;
+}
+
+.account-dropdown div {
+  padding: 5px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+
+
